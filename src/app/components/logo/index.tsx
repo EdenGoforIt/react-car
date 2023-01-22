@@ -15,10 +15,14 @@ const LogoText = styled.div`
 	${tw`
         text-xl
         md:text-2xl
+		
         font-bold
         text-black
         m-1 
         italic
+
+		lg:block
+		hidden
     `};
 `;
 
