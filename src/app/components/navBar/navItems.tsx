@@ -28,7 +28,6 @@ const NavItem = styled.li<{ menu?: any }>`
         hover:text-gray-700
     `}
 	& > a {
-		color: white;
 		text-decoration: none;
 	}
 
