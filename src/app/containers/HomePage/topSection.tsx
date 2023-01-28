@@ -1,18 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
+import MclarenCarImg from '../../assets/images/mclaren-orange.png';
+import BlobImage from '../../assets/images/blob.svg';
+import { SCREENS } from '../../components/responsive';
 
 const TopSectionContainer = styled.div`
 	min-height: 400px;
-	margin-top: 6em;
+	margin-top: 8em;
 
 	${tw`
         w-full
         max-w-screen-2xl
         flex
-        justify-between
-        pl-3
-        pr-3
+        justify-between 
         lg:pl-12
         lg:pr-12
     `};
@@ -23,6 +24,7 @@ const LeftContainer = styled.div`
         w-1/2
         flex
         flex-col
+        pl-3
     `}
 `;
 const RightContainer = styled.div`
@@ -68,27 +70,78 @@ const BlobContainer = styled.div`
 	width: 20em;
 	height: 10em;
 	position: absolute;
-	right: -5em;
+	right: 3em;
 	top: -9em;
 	z-index: -1;
 	transform: rotate(-30deg);
-	img {
-		width: 100%;
-		height: auto;
-		max-height: max-content;
+
+	@media (min-width: ${SCREENS.sm}) {
+		width: 40em;
+		max-height: 10em;
+		right: -9em;
+		top: -16em;
+		transform: rotate(-25deg);
+	}
+	@media (min-width: ${SCREENS.lg}) {
+		width: 20em;
+		max-height: 30em;
+		right: -7em;
+		top: -15em;
+		transform: rotate(-25deg);
+	}
+	@media (min-width: ${SCREENS.xl}) {
+		width: 70em;
+		max-height: 10em;
+		right: -5em;
+		top: -25em;
+		transform: rotate(-20deg);
 	}
 `;
 
 const StandaloneCar = styled.div`
-	width: auto;
-	right: 10em;
-	right: -6em;
+	right: 3em;
 	top: -5em;
 	position: absolute;
+
 	img {
-		width: auto;
-		height: 100%;
+		width: 100%;
 		max-width: fit-content;
+		height: 100%;
+	}
+
+	@media (min-width: ${SCREENS.sm}) {
+		img {
+			height: 16em;
+			right: -6em;
+			top: -6em;
+		}
+	}
+	@media (min-width: ${SCREENS.lg}) {
+		img {
+			height: 16em;
+			right: -6em;
+			top: -6em;
+		}
 	}
 `;
-export function TopSection() {}
+export function TopSection() {
+	return (
+		<TopSectionContainer>
+			<LeftContainer>
+				<Slogan>Rent a best quality car from us</Slogan>
+				<Description>
+					Choose the best car from our local stores. We provide a full insurance
+					coverage as well as premium customer service
+				</Description>
+			</LeftContainer>
+			<RightContainer>
+				<BlobContainer>
+					<img src={BlobImage} />
+				</BlobContainer>
+				<StandaloneCar>
+					<img src={MclarenCarImg} />
+				</StandaloneCar>
+			</RightContainer>
+		</TopSectionContainer>
+	);
+}
