@@ -4,6 +4,7 @@ import tw from 'twin.macro';
 import MclarenCarImg from '../../assets/images/mclaren-orange.png';
 import BlobImage from '../../assets/images/blob.svg';
 import { SCREENS } from '../../components/responsive';
+import { Button } from '../../components/button';
 
 const TopSectionContainer = styled.div`
 	min-height: 400px;
@@ -124,6 +125,14 @@ const StandaloneCar = styled.div`
 		}
 	}
 `;
+
+const ButtonContainer = styled.div`
+	${tw`
+		flex
+		flex-wrap
+		mt-4
+	`}
+`;
 export function TopSection() {
 	return (
 		<TopSectionContainer>
@@ -133,6 +142,10 @@ export function TopSection() {
 					Choose the best car from our local stores. We provide a full insurance
 					coverage as well as premium customer service
 				</Description>
+				<ButtonContainer>
+					<Button text='Book Your Ride' theme='outlined' />
+					<Button text='Sell Your Car' theme='filled' />
+				</ButtonContainer>
 			</LeftContainer>
 			<RightContainer>
 				<BlobContainer>
