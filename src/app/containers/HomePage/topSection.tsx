@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
-import MclarenCarImg from '../../assets/images/mclaren-orange.png';
+import KiaCar from '../../assets/images/kia-car.png';
 import BlobImage from '../../assets/images/blob.svg';
 import { SCREENS } from '../../components/responsive';
 import { Button } from '../../components/button';
@@ -152,7 +152,7 @@ export function TopSection() {
 					<img src={BlobImage} />
 				</BlobContainer>
 				<StandaloneCar>
-					<img src={MclarenCarImg} />
+					<img src={KiaCar} />
 				</StandaloneCar>
 			</RightContainer>
 		</TopSectionContainer>
