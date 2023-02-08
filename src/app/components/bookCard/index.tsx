@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import { faCalendarAlt } from "@fortawesome/free-regular-svg-icons";
@@ -51,6 +51,8 @@ const Name = styled.span`
         text-gray-600
         text-xs
         md:text-sm
+        cursor-pointer
+        mt-1
  `}
 `;
 
@@ -72,25 +74,58 @@ const DateCalendar = styled(Calendar)`
   top: 1em;
   left: -1.5em;
   max-width: none;
-  top: 1.5em;
+  top: 3.5em;
 `;
 
 export function BookCard() {
+  const [startDate, setStartDate] = useState(new Date());
+  const [isStartCalendarOpen, setIsStartCalendarOpen] = useState(false);
+
+  const [returnDate, setReturnDate] = useState(new Date());
+  const [isReturnCalendarOpen, setIsReturnCalendarOpen] = useState(false);
+
+  const openStartCalendar = () => {
+    if (isReturnCalendarOpen) setIsReturnCalendarOpen(false);
+    setIsStartCalendarOpen(!isStartCalendarOpen);
+  };
+
+  const openReturnCalendar = () => {
+    if (isStartCalendarOpen) setIsStartCalendarOpen(false);
+    setIsReturnCalendarOpen(!isReturnCalendarOpen);
+  };
+
   return (
     <CardContainer>
       <ItemContainer>
         <Icon>
           <FontAwesomeIcon icon={faCalendarAlt} />
         </Icon>
-        <Name>Pick up Date</Name>
-        <DateCalendar />
+        <Name onClick={openStartCalendar}>Pick up Date</Name>
+        {isStartCalendarOpen && (
+          <DateCalendar
+            value={startDate}
+            onChange={(event: any) => {
+              openStartCalendar();
+              setStartDate(event);
+            }}
+          />
+        )}
       </ItemContainer>
       <LineSeparator />
       <ItemContainer>
         <Icon>
           <FontAwesomeIcon icon={faCalendarAlt} />
         </Icon>
-        <Name>Return Date</Name>
+        <Name onClick={openReturnCalendar}>Return Date</Name>
+        {isReturnCalendarOpen && (
+          <DateCalendar
+            value={returnDate}
+            onChange={(event: any) => {
+              openReturnCalendar();
+              setReturnDate(event);
+            }}
+          />
+        )}
       </ItemContainer>
       <Marginer direction="horizontal" margin="2em" />
       <Button theme="filled" text="Book Your Ride" />

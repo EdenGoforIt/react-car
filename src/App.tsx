@@ -1,10 +1,12 @@
-import './App.css';
-import styled from 'styled-components';
-import tw from 'twin.macro';
-import { HomePage } from './app/containers/HomePage';
+import "./App.css";
+import styled from "styled-components";
+import tw from "twin.macro";
+import { HomePage } from "./app/containers/HomePage";
+import { useRef } from "react";
+import { useOnClickOutside } from "./app/hooks/useOnClickOutside";
 
 const AppContainer = styled.div`
-	${tw`
+  ${tw`
 		w-full
 		h-full
 		flex
@@ -13,11 +15,15 @@ const AppContainer = styled.div`
 `;
 
 function App() {
-	return (
-		<AppContainer>
-			<HomePage />
-		</AppContainer>
-	);
+  const ref = useRef(null);
+
+  useOnClickOutside(ref, () => console.log("clicked"));
+
+  return (
+    <AppContainer ref={ref}>
+      <HomePage />
+    </AppContainer>
+  );
 }
 
 export default App;
