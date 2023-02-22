@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
-import { faCalendarAlt } from "@fortawesome/free-regular-svg-icons";
+import {
+  faCalendarAlt,
+  faCaretSquareDown,
+  faCaretSquareUp,
+} from "@fortawesome/free-regular-svg-icons";
 import { Marginer } from "../marginer";
 import { Button } from "../button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -44,6 +48,16 @@ const Icon = styled.span`
         mr-1
         md:mr-3
     `}
+`;
+const SmallIcon = styled.span`
+  ${tw`
+    text-gray-700
+    fill-current
+    text-xs
+    mt-0.5
+    md:text-base
+    ml-1
+  `}
 `;
 
 const Name = styled.span`
@@ -101,6 +115,11 @@ export function BookCard() {
           <FontAwesomeIcon icon={faCalendarAlt} />
         </Icon>
         <Name onClick={openStartCalendar}>Pick up Date</Name>
+        <SmallIcon>
+          <FontAwesomeIcon
+            icon={isStartCalendarOpen ? faCaretSquareUp : faCaretSquareDown}
+          />
+        </SmallIcon>
         {isStartCalendarOpen && (
           <DateCalendar
             value={startDate}
@@ -117,6 +136,11 @@ export function BookCard() {
           <FontAwesomeIcon icon={faCalendarAlt} />
         </Icon>
         <Name onClick={openReturnCalendar}>Return Date</Name>
+        <SmallIcon>
+          <FontAwesomeIcon
+            icon={isReturnCalendarOpen ? faCaretSquareUp : faCaretSquareDown}
+          />
+        </SmallIcon>
         {isReturnCalendarOpen && (
           <DateCalendar
             value={returnDate}
