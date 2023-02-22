@@ -48,29 +48,29 @@ const NavItem = styled.li<{ menu?: any }>`
 
 export function NavItems() {
 	const isMobile = useMediaQuery({ maxWidth: SCREENS.sm });
-	if (isMobile) {
-		return (
-			<Menu right styles={menuStyle}>
-				<ListContainer>
-					<NavItem menu>
-						<a href='#'>Home</a>
-					</NavItem>
-					<NavItem menu>
-						<a href='#'>Cars</a>
-					</NavItem>
-					<NavItem menu>
-						<a href='#'>Services</a>
-					</NavItem>
-					<NavItem menu>
-						<a href='#'>Career</a>
-					</NavItem>
-					<NavItem menu>
-						<a href='#'>Contact Us</a>
-					</NavItem>
-				</ListContainer>
-			</Menu>
-		);
-	}
+	// if (isMobile) {
+	// 	return (
+	// 		<Menu right styles={menuStyle}>
+	// 			<ListContainer>
+	// 				<NavItem menu>
+	// 					<a href='#'>Home</a>
+	// 				</NavItem>
+	// 				<NavItem menu>
+	// 					<a href='#'>Cars</a>
+	// 				</NavItem>
+	// 				<NavItem menu>
+	// 					<a href='#'>Services</a>
+	// 				</NavItem>
+	// 				<NavItem menu>
+	// 					<a href='#'>Career</a>
+	// 				</NavItem>
+	// 				<NavItem menu>
+	// 					<a href='#'>Contact Us</a>
+	// 				</NavItem>
+	// 			</ListContainer>
+	// 		</Menu>
+	// 	);
+	// }
 
 	return (
 		<>

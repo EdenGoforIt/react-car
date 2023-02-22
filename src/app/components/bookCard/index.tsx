@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import tw from "twin.macro";
 import {
   faCalendarAlt,
@@ -11,6 +11,7 @@ import { Button } from "../button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Calendar from "react-calendar";
 import "../../assets/styles/react-calendar.css";
+import { SCREENS } from "../responsive";
 
 const CardContainer = styled.div`
   box-shadow: 0 1.3px 12px -3px rgba(0, 0, 0, 0.4);
@@ -51,7 +52,7 @@ const Icon = styled.span`
 `;
 const SmallIcon = styled.span`
   ${tw`
-    text-gray-700
+    text-gray-500
     fill-current
     text-xs
     mt-0.5
@@ -83,12 +84,15 @@ const LineSeparator = styled.span`
     `}
 `;
 
-const DateCalendar = styled(Calendar)`
+const DateCalendar = styled(Calendar)<{ offset: boolean }>`
   position: absolute;
-  top: 1em;
-  left: -1.5em;
   max-width: none;
+  left: ${({ offset }) => (offset ? "-7em" : "0")};
   top: 3.5em;
+
+  @media (min-width: ${SCREENS.md}) {
+    left: -1.5em;
+  }
 `;
 
 export function BookCard() {
@@ -122,6 +126,7 @@ export function BookCard() {
         </SmallIcon>
         {isStartCalendarOpen && (
           <DateCalendar
+            offset={false}
             value={startDate}
             onChange={(event: any) => {
               openStartCalendar();
@@ -143,6 +148,7 @@ export function BookCard() {
         </SmallIcon>
         {isReturnCalendarOpen && (
           <DateCalendar
+            offset={true}
             value={returnDate}
             onChange={(event: any) => {
               openReturnCalendar();
