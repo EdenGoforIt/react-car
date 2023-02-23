@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import styled, { css } from "styled-components";
 import tw from "twin.macro";
 import {
@@ -12,6 +12,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Calendar from "react-calendar";
 import "../../assets/styles/react-calendar.css";
 import { SCREENS } from "../responsive";
+import { useOnClickOutside } from "../../hooks/useOnClickOutside";
 
 const CardContainer = styled.div`
   box-shadow: 0 1.3px 12px -3px rgba(0, 0, 0, 0.4);
