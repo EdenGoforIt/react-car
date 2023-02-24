@@ -41,7 +41,6 @@ const StepContainer = styled.div`
   ${tw`
         flex
         flex-col
-        w-16
         items-center
         cursor-text
         transition-colors
@@ -75,14 +74,16 @@ const StepDescription = styled.p`
         text-center
         w-10/12
         text-gray-600
-        w-90
-  `}
+
+`}
 `;
 
 const StepIcon = styled.span`
   ${tw`
         text-red-500
         text-3xl
+        mr-2
+        mb-2
     `}
 `;
 
