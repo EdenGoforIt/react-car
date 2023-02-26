@@ -34,6 +34,7 @@ const StepsContainer = styled.div`
     flex-wrap
     mt-7
     lg:mt-16
+    m-3
   `}
 `;
 
@@ -45,6 +46,8 @@ const StepContainer = styled.div`
         cursor-text
         transition-colors
         hover:text-red-500
+        w-16
+        md:w-96
     `}
 `;
 
@@ -55,6 +58,7 @@ const Step = styled.div`
         items-center
         justify-center
         p-6
+        ml-4
     `}
 `;
 
