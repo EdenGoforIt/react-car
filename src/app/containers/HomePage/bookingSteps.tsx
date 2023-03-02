@@ -31,9 +31,10 @@ const StepsContainer = styled.div`
   ${tw`
     flex
     justify-evenly
-    flex-wrap
     mt-7
     lg:mt-16
+    flex-wrap
+    lg:flex-nowrap
     m-3
   `}
 `;
@@ -41,12 +42,12 @@ const StepsContainer = styled.div`
 const StepContainer = styled.div`
   ${tw`
         flex
-        flex-col
-        items-center
+        flex-col 
         cursor-text
         transition-colors
-        hover:text-red-500 
-        md:w-96
+        w-full
+        hover:text-red-500
+        md:w-full 
     `}
 `;
 
