@@ -45,8 +45,7 @@ const StepContainer = styled.div`
         items-center
         cursor-text
         transition-colors
-        hover:text-red-500
-        w-16
+        hover:text-red-500 
         md:w-96
     `}
 `;

@@ -12,8 +12,7 @@ const AboutUsContainer = styled.div`
         items-center
         2xl:justify-center
         pt-4
-        pr-7
-        pl-7
+        pl-12
         md:pl-0
         md:pr-0
         bg-white
@@ -63,7 +62,7 @@ const Title = styled.h1`
 
 const InfoText = styled.p`
   ${tw`
-        max-w-2xl
+        md:max-w-2xl
         text-sm
         md:text-base
         text-gray-500
