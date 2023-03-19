@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import { ICar } from '../../typings/car';
+import { Button } from '../button';
 
 interface ICarProps extends ICar {}
 
@@ -69,5 +70,52 @@ const MonthlyPrice = styled.h5`
     `}
 `;
 
-const SmallIcon = styled.span``;
+const SmallIcon = styled.span`
+  ${tw`
+    text-gray-400
+    text-sm
+    mr-1
+  `}
+`;
+
+const CarDetailsContainer = styled.div`
+  ${tw`
+    flex
+    w-full
+    justify-between
+  `}
+`;
+
+const CarDetail = styled.span`
+  ${tw`
+    flex
+    items-center
+  `}
+`;
+
+const CarInfo = styled.h5`
+  ${tw`
+    text-gray-400
+    text-xs
+  `}
+`;
+
+const Sperator = styled.div`
+  min-width: 100%;
+  min-height: 1px;
+  ${tw`
+    flex
+    bg-gray-300
+    mt-2
+    mb-2
+  `}
+`;
+
+const RentButton = styled(Button)`
+  ${tw`
+    min-w-full
+    mt-5
+  `}
+`;
+
 export function Car() {}
