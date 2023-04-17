@@ -143,7 +143,7 @@ export function TopSection() {
 					coverage as well as premium customer service
 				</Description>
 				<ButtonContainer>
-					<Button text='Book Your Ride' theme='outlined' />
+					<Button text='Book Your Ride' theme='filled' />
 					<Button text='Sell Your Car' theme='filled' />
 				</ButtonContainer>
 			</LeftContainer>
